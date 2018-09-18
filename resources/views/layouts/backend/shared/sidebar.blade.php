@@ -22,18 +22,18 @@
           </a>
           <ul class="treeview-menu">
             <li class="treeview">
-              <a href="#"><i class="fa fa-circle-o"></i> All Product
+              <a href="{{ route('product.index' )}}"><i class="fa fa-circle-o"></i> All Product
                 <span class="pull-right-container">
                   <i class="fa fa-angle-left pull-right"></i>
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Home Router</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Mobile Wifi</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Power Bank</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Camera</a></li>
-                <li><a href="#"><i class="fa fa-circle-o"></i> Unified Communication</a></li>
+                <li><a href="{{ route('brands.index', 'home-router')}}"><i class="fa fa-circle-o"></i> Home Router</a></li>
+                <li><a href="{{ route('brands.index', 'mobile-wifi')}}"><i class="fa fa-circle-o"></i> Mobile Wifi</a></li>
+                <li><a href="{{ route('brands.index', 'power-bank')}}"><i class="fa fa-circle-o"></i> Power Bank</a></li>
+                <li><a href="{{ route('brands.index', 'computer-accessories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
+                <li><a href="{{ route('brands.index', 'camera')}}"><i class="fa fa-circle-o"></i> Camera</a></li>
+                <li><a href="{{ route('brands.index', 'unified-communication')}}"><i class="fa fa-circle-o"></i> Unified Communication</a></li>
               </ul>
             </li>
           </ul>

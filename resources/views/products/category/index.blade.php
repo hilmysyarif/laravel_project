@@ -25,11 +25,6 @@
         <div class="box">
                     <div class="box-header with-border">
                       <h3 class="box-title">All Categories</h3>
-                      <p class="pull-right">
-                          <a href="/backend/products/create" class="btn btn-success btn-xs ad-click-event">
-                              New Category
-                          </a>
-                      </p>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -48,23 +43,12 @@
                             <td>{{ $value->slug }}</td>
                             <td>{{ $value->icon }}</td>
                             <td class="text-nowrap">
-                              <a href="{{route('brands.index',  $value->id)}}" class="btn btn-info btn-xs">Brands</a>
+                              <a href="{{route('brands.index',  $value->slug)}}" class="btn btn-info btn-xs">Brands</a>
                             </td>
                           </tr>
                         @endforeach
                       </tbody></table>
                     </div>
-                    <!-- /.box-body -->
-                    <div class="box-footer clearfix">
-                      <ul class="pagination pagination-sm no-margin pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">»</a></li>
-                      </ul>
-                    </div>
-                  </div>
 </section>
 
 @endsection

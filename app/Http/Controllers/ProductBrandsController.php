@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\ProductCategory;
+use App\ProductBrand;
 
 class ProductBrandsController extends Controller
 {
@@ -21,16 +23,11 @@ class ProductBrandsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($category)
     {
-      // switch ($product_id) {
-      //   case 'home-router':
-      return view('products.brands.index');
-      //   default:
-      //     return 'error';
-      //     break;
-      //
-      // }
+      $category = ProductCategory::where('slug', $category)->first();
+      $brands   = ProductBrand::where('parent_id', $category->id)->get();
+      return view('products.brands.index', compact('category', 'brands'));
     }
 
     /**
@@ -38,8 +35,64 @@ class ProductBrandsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function new()
+    public function create($category)
     {
-        return view('products.brands.new');
+        $category = ProductCategory::where('slug', $category)->first();
+        return view('products.brands.new', compact('category'));
     }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+      // validate our input description
+  		$this->validate($request, [	'title' => 'required', 'logo' => 'required']);
+
+      // we have a hamburger with a valid name
+
+      $category = ProductCategory::find($request->input('product_id'))->first();
+
+      $data = [
+  			'parent_id' => $request->input('product_id'),
+  			'title' => $request->input('title'),
+        'description' => $request->input('description')
+  		];
+
+      if ($request->hasfile('logo')) {
+          $file = $request->file('logo');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['logo'] = $filename;
+      }
+
+      if ($request->hasfile('thumbnail')) {
+          $file = $request->file('thumbnail');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['thumbnail'] = $filename;
+      }
+
+      ProductBrand::create($data);
+
+      // redirect
+      \Session::flash('message', 'Successfully created brand!');
+      return redirect()->route('brands.index', [$category->slug]);
+
+    }
+
+    public function destroy($category_id, $brandId)
+  	{
+  		ProductBrand::destroy($brandId);
+
+      \Session::flash('message', 'Successfully delete brand!');
+
+      return redirect()->route('brands.index', [$category->slug]);
+
+  	}
+
 }

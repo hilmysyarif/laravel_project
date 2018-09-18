@@ -31,7 +31,7 @@
                         <form class="form-horizontal col-md-6" role="form" method="POST" action="{{ url('/backend/products') }}">
                           {{ csrf_field() }}
                           <div class="form-group has-feedback">
-                            <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" required autofocus>
+                            <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="Title" required autofocus>
                             @if ($errors->has('title'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('title') }}</strong>
@@ -39,7 +39,7 @@
                             @endif
                           </div>
                           <div class="form-group has-feedback">
-                            <input id="icon" type="text" class="form-control" name="icon" value="{{ old('icon') }}" required autofocus>
+                            <input id="icon" type="text" class="form-control" name="icon" value="{{ old('icon') }}"  placeholder="Icon" required autofocus>
                             @if ($errors->has('icon'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('icon') }}</strong>

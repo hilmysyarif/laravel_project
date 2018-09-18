@@ -322,7 +322,7 @@ CREATE TABLE `product_brands` (
   PRIMARY KEY (`id`),
   KEY `product_brands_parent_id_foreign` (`parent_id`),
   CONSTRAINT `product_brands_parent_id_foreign` FOREIGN KEY (`parent_id`) REFERENCES `product_categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -331,6 +331,7 @@ CREATE TABLE `product_brands` (
 
 LOCK TABLES `product_brands` WRITE;
 /*!40000 ALTER TABLE `product_brands` DISABLE KEYS */;
+INSERT INTO `product_brands` VALUES (1,1,'Huawei','huawei','/private/var/folders/5m/2k10sq997jj3p_6jgzq1_0d40000gn/T/php375x2J','/private/var/folders/5m/2k10sq997jj3p_6jgzq1_0d40000gn/T/phpPde2kL','Huawei is a leading global ICT solutions provider. Through our dedication to customer-centric innovation and strong partnerships, we have established end-to-end capabilities and strengths across the carrier networks, enterprise, consumer, and cloud computing fields. We are committed to creating maximum value for telecom carriers, enterprises and co …',NULL,'2018-09-18 12:33:16','2018-09-18 12:33:16'),(2,1,'Huawei','huawei-1','1537300118.png','1537300118.png','Huawei is a leading global ICT solutions provider. Through our dedication to customer-centric innovation and strong partnerships, we have established end-to-end capabilities and strengths across the carrier networks, enterprise, consumer, and cloud computing fields. We are committed to creating maximum value for telecom carriers, enterprises and co …',NULL,'2018-09-18 12:48:38','2018-09-18 12:48:38');
 /*!40000 ALTER TABLE `product_brands` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -509,7 +510,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Hilmy Syarif','hilmysyarif@gmail.com','$2y$10$GTO62w82TCTxacXsQfohIOIPUU/ktaI7IbA5SaEQoVzhnt7YZ93u.',NULL,'2018-09-16 01:11:59','2018-09-16 01:11:59');
+INSERT INTO `users` VALUES (1,'Hilmy Syarif','hilmysyarif@gmail.com','$2y$10$GTO62w82TCTxacXsQfohIOIPUU/ktaI7IbA5SaEQoVzhnt7YZ93u.','mtQzI2hnFP9DN2fDhXxm7U9OxZWLj8kNYLyz5BHPAQDoy3W59rjH2eBfsiT2','2018-09-16 01:11:59','2018-09-17 18:33:16');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -522,4 +523,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-09-18  8:32:09
+-- Dump completed on 2018-09-19  2:53:29
