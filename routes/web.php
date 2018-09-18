@@ -20,6 +20,20 @@ Auth::routes();
 Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
   Route::get('/', 'HomeController@index');
 
-  // Product Brands
-  Route::resource('/product/{product_id}/brands', 'ProductBrandsController');
+  // Product Category
+  Route::group(['prefix' => 'products'], function () {
+    Route::resource('/', 'ProductCategoryController', [
+      'names' => [
+        'index' => 'product.index',
+        'edit' => 'product.edit',
+        'update' => 'product.update',
+        'delete' => 'product.delete'
+      ]
+    ]);
+
+    // Product Brands
+    Route::resource('/{product_id}/brands', 'ProductBrandsController');
+  });
+
+
 });

@@ -46,10 +46,8 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
   @include('layouts.backend.shared.header')
+  @include('layouts.backend.shared.sidebar')
 
-  @if(Route::currentRouteName() != ('login' || 'register'))
-    @include('layouts.backend.shared.sidebar')
-  @endif
   <div class="wrapper">
 
     <!-- Content Wrapper. Contains page content -->
