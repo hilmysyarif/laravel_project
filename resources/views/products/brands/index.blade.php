@@ -50,8 +50,11 @@
                             <td><img src="{{ asset('uploads/images/' . $value->logo) }}" width="85" height="85" /></td>
                             <td>{!! $value->description !!}</td>
                             <td class="text-nowrap">
-                              <a href="#" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-                              <a href="#" class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></a>
+                              <a href="{{ route('brands.edit',[$category->slug, $value->id])}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'brands.destroy', $category->slug, $value->id ] ]) !!}
+                                  <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                              {{ Form::close() }}
+
                             </td>
                           </tr>
                         @endforeach
