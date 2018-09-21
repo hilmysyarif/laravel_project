@@ -54,6 +54,18 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
     ]
   ]);
 
+  // enterpriseBox
+  Route::resource('/enterpriseBox', 'EnterpriseBoxController', [
+    'names' => [
+      'index' => 'backend.enterpriseBox.index',
+      'edit' => 'backend.enterpriseBox.edit',
+      'create' => 'backend.enterpriseBox.create',
+      'store' => 'backend.enterpriseBox.store',
+      'update' => 'backend.enterpriseBox.update',
+      'delete' => 'backend.enterpriseBox.destroy'
+    ]
+  ]);
+
   // News and Category
   Route::group(['prefix' => 'news'], function () {
     Route::resource('/', 'NewsController', [

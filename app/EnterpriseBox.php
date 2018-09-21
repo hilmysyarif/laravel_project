@@ -7,13 +7,14 @@ use Harran\Slugit\SlugService;
 
 class EnterpriseBox extends Model
 {
+  protected $table = 'enterprise_box';
 
   use SlugService;
-
-  /**
-   * Setting which field is the slug and which field is the source for generating the slug
-   * @return array
-   */
+  //
+  // /**
+  //  * Setting which field is the slug and which field is the source for generating the slug
+  //  * @return array
+  //  */
     public function slugSettings(){
       return [
         'slug' => 'title'
@@ -26,7 +27,7 @@ class EnterpriseBox extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'url'
+      'title', 'icon', 'thumbnail','url'
     ];
 
     /**

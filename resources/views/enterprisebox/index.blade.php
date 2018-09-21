@@ -1,7 +1,7 @@
 @extends('layouts.backend.backend')
 
 @section('site-title')
-  AboutUs
+  Enterprise Box
 @endsection
 
 @section('content')
@@ -9,12 +9,12 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          About
+          All Enterprise Box
           <small></small>
         </h1>
         <ol class="breadcrumb">
           <li><a href="{{ url('/#/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
-          <li><a href="{{ route('aboutus.index')}}">About</a></li>
+          <li><a href="{{ route('backend.enterpriseBox.index')}}">Enterprise</a></li>
         </ol>
       </section>
 
@@ -23,44 +23,42 @@
 
         <div class="box">
                     <div class="box-header with-border">
-                      <h3 class="box-title">All Abouts</h3>
+                      <h3 class="box-title"></h3>
                       <p class="pull-right">
-                          <a href="{{route('aboutus.create')}}" class="btn btn-success btn-xs ad-click-event">
-                              New About
+                          <a href="{{ route('backend.enterpriseBox.create')}}" class="btn btn-success btn-xs ad-click-event">
+                              New enterprise Box
                           </a>
                       </p>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                       <table class="table table-bordered">
-                        <tbody>
-                        <tr>
+                        <tbody><tr>
                           <th style="width: 10px">#</th>
-                          <th>Key</th>
-                          <th>Value</th>
-                          <th>Image</th>
-                          <th>Ext</th>
+                          <th>Title</th>
+                          <th>Icon</th>
+                          <th>thumbnail</th>
                           <th style="width: 40px">Action</th>
                         </tr>
-                        @foreach($aboutus as $key => $value)
+                        @foreach($enterprisesBox as $key => $value)
                           <tr>
                             <td>{{ $value->id }}</td>
-                            <td>{{ $value->key }}</td>
-                            <td>{{ $value->value }}</td>
-                            <td><img src="{{ asset('uploads/images/' . $value->file) }}" width="85" height="85" /></td>
-                            <td>{{ $value->ext }}</td>
-
+                            <td>{{ $value->title }}</td>
+                            <td><img src="{{ asset('uploads/images/' . $value->icon) }}" width="85" height="85" /></td>
+                            <td><img src="{{ asset('uploads/images/' . $value->thumbnail ) }}" width="85" height="85" /></td>
                             <td class="text-nowrap">
-                              <a href="{{ route('aboutus.edit',[ $value->id] )}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'aboutus.destroy', $value->id ] ]) !!}
-                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                              <a href="{{ route('backend.enterpriseBox.edit', $value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'enterpriseBox.destroy', $value->id ] ]) !!}
+                                  <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                               {{ Form::close() }}
+
                             </td>
                           </tr>
                         @endforeach
                       </tbody></table>
                     </div>
+                    <!-- /.box-body -->
                   </div>
-        </section>
+</section>
 
 @endsection
