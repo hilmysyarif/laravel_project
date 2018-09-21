@@ -1,7 +1,7 @@
 @extends('layouts.backend.backend')
 
 @section('site-title')
-  {{ $category->title }}
+  {{ $brand->title }} | Products
 @endsection
 
 @section('content')
@@ -9,13 +9,16 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          {{ $category->title }}
+          {{ $brand->title }} | Products
           <small></small>
         </h1>
         <ol class="breadcrumb">
           <li><a href="{{ url('/#/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
           <li><a href="{{ route('product.index')}}">Product</a></li>
-          <li><a href="#">{{ $category->title }}</a></li>
+          <li><a href="{{ route('brands.index', $category->slug)}}">{{ $category->title }}</a></li>
+          <li><a href="{{ route('brands.show', [$category->slug, $brand->id])}}">{{ $brand->title }}</a></li>
+          <li class="active"><a href="#">Products</a></li>
+
         </ol>
       </section>
 
@@ -24,10 +27,10 @@
 
         <div class="box">
                     <div class="box-header with-border">
-                      <h3 class="box-title">All Brands</h3>
+                      <h3 class="box-title">All Products</h3>
                       <p class="pull-right">
-                          <a href="{{ route('brands.create', $category->slug)}}" class="btn btn-success btn-xs ad-click-event">
-                              New Brand
+                          <a href="{{ route('products.create', [$category->slug, $brand->id])}}" class="btn btn-success btn-xs ad-click-event">
+                              New Product
                           </a>
                       </p>
                     </div>
@@ -36,13 +39,12 @@
                       <table class="table table-bordered">
                         <tbody><tr>
                           <th style="width: 10px">#</th>
-                          <th>Brand Title</th>
-                          <th>Brand Image</th>
-                          <th>Brand Logo</th>
+                          <th>Product Title</th>
+                          <th>Product Thumbnail</th>
                           <th>Description</th>
                           <th style="width: 40px">Action</th>
                         </tr>
-                        @foreach($brands as $key => $value)
+                        @foreach($products as $key => $value)
                           <tr>
                             <td>{{ $value->id }}</td>
                             <td>{{ $value->title }}</td>

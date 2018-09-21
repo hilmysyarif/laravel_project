@@ -31,7 +31,7 @@
                 <li><a href="{{ route('brands.index', 'home-router')}}"><i class="fa fa-circle-o"></i> Home Router</a></li>
                 <li><a href="{{ route('brands.index', 'mobile-wifi')}}"><i class="fa fa-circle-o"></i> Mobile Wifi</a></li>
                 <li><a href="{{ route('brands.index', 'power-bank')}}"><i class="fa fa-circle-o"></i> Power Bank</a></li>
-                <li><a href="{{ route('brands.index', 'computer-accessories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
+                <li><a href="{{ route('brands.index', 'computer-accesories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
                 <li><a href="{{ route('brands.index', 'camera')}}"><i class="fa fa-circle-o"></i> Camera</a></li>
                 <li><a href="{{ route('brands.index', 'unified-communication')}}"><i class="fa fa-circle-o"></i> Unified Communication</a></li>
               </ul>

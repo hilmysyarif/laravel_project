@@ -32,7 +32,30 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
     ]);
 
     // Product Brands
-    Route::resource('/{product_id}/brands', 'ProductBrandsController');
+    Route::resource('/{product_id}/brands', 'ProductBrandsController', [
+      'names' => [
+        'index' => 'brands.index',
+        'create' => 'brands.create',
+        'store' => 'brands.store',
+        'edit' => 'brands.edit',
+        'update' => 'brands.update',
+        'delete' => 'brands.delete'
+      ]
+    ]);
+
+    // Product
+    Route::resource('/{product_id}/brands/{brand_id}/products', 'ProductsController', [
+      'names' => [
+        'index' => 'products.index',
+        'create' => 'products.create',
+        'store' => 'products.store',
+        'edit' => 'products.edit',
+        'update' => 'products.update',
+        'delete' => 'products.delete'
+      ]
+    ]);
+
+
   });
 
 

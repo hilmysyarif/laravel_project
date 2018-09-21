@@ -7,7 +7,7 @@ use App\ProductCategory;
 use App\ProductBrand;
 use App\Product;
 
-class ProductBrandsController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Create a new controller instance.
