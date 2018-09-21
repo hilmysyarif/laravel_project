@@ -3,6 +3,6 @@ Intertec.controller('aboutController', function aboutController($scope, $http, $
   // retrieve slider listing from API
   $http.get(constants.API_URL + "about")
   .success(function(response) {
-  	$scope.data = response.data;
+  	$scope.data = response.about;
   });
 });

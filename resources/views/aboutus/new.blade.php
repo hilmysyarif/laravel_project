@@ -50,19 +50,10 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                          <input id="file" type="file" class="form-control" name="file" placeholder="File" required autofocus>
+                          <input id="file" type="file" class="form-control" name="file" placeholder="File" autofocus>
                           @if ($errors->has('file'))
                               <span class="help-block">
                                   <strong>{{ $errors->first('file') }}</strong>
-                              </span>
-                          @endif
-                        </div>
-
-                        <div class="form-group has-feedback">
-                          <input id="ext" class="form-control" name="ext" placeholder="Value" autofocus>
-                          @if ($errors->has('ext'))
-                              <span class="help-block">
-                                  <strong>{{ $errors->first('ext') }}</strong>
                               </span>
                           @endif
                         </div>

@@ -17,12 +17,4 @@ class AboutUs extends Model
         'key', 'value', 'file', 'ext'
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'file', 'ext'
-    ];
 }
