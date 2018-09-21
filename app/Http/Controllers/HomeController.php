@@ -11,6 +11,7 @@ use App\Slider;
 use App\Customer;
 use App\News;
 use App\NewsCategory;
+use App\Enterprise;
 
 class HomeController extends Controller
 {
@@ -128,5 +129,17 @@ class HomeController extends Controller
       $categories = NewsCategory::all();
 
       return response()->json(compact('categories'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function enterprise()
+    {
+      $enterprise = Enterprise::all();
+
+      return response()->json(compact('enterprise'));
     }
 }

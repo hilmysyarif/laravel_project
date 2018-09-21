@@ -13,11 +13,12 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('about_us','HomeController@about_us');
+Route::resource('about','HomeController@about_us');
 Route::resource('sliders','HomeController@sliders');
 Route::resource('brands','HomeController@brands');
 Route::resource('products','HomeController@products');
-Route::resource('product-category','HomeController@product_category');
+Route::resource('productcategory','HomeController@product_category');
 Route::resource('clients','HomeController@clients');
 Route::resource('news','HomeController@news');
 Route::resource('news-category','HomeController@news_category');
+Route::resource('enterprise','HomeController@enterprise');

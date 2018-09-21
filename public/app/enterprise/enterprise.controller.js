@@ -3,12 +3,11 @@ Intertec.controller('enterpriseController', function enterpriseController($scope
   // retrieve slider listing from API
   $http.get(constants.API_URL + "enterprise")
   .success(function(response) {
-  	$scope.data = response.data;
+  	$scope.data = response.enterprise;
   });
 
   $http.get(constants.API_URL + "clients")
   .success(function(response) {
-  	$scope.customerLists = response.data;
-    console.log(response.data);
+  	$scope.items = response.customers;
   });
 });

@@ -25,7 +25,7 @@ class ProductCategory extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'icon'
+        'title', 'icon', 'slug'
     ];
 
     /**
@@ -34,7 +34,7 @@ class ProductCategory extends Model
      * @var array
      */
     protected $hidden = [
-        'slug'
+        ''
     ];
 
 }

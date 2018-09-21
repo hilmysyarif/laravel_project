@@ -118,4 +118,15 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
   });
 
 
+  Route::resource('/aboutus', 'AboutUsController', [
+    'names' => [
+      'index' => 'aboutus.index',
+      'create' => 'aboutus.create',
+      'store' => 'aboutus.store',
+      'edit' => 'aboutus.edit',
+      'update' => 'aboutus.update',
+      'delete' => 'aboutus.delete'
+    ]
+  ]);
+
 });
