@@ -25,19 +25,20 @@
                     <div class="box-header with-border">
                       <h3 class="box-title">All Abouts</h3>
                       <p class="pull-right">
-                          <!-- <a href="{{ route('brands.create', $category->slug)}}" class="btn btn-success btn-xs ad-click-event">
-                              New Br
-                          </a> -->
+                          <a href="{{route('aboutus.create')}}" class="btn btn-success btn-xs ad-click-event">
+                              New About
+                          </a>
                       </p>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
                       <table class="table table-bordered">
-                        <tbody><tr>
+                        <tbody>
+                        <tr>
                           <th style="width: 10px">#</th>
                           <th>Key</th>
                           <th>Value</th>
-                          <th>File</th>
+                          <th>Image</th>
                           <th>Ext</th>
                           <th style="width: 40px">Action</th>
                         </tr>
@@ -48,13 +49,12 @@
                             <td>{{ $value->value }}</td>
                             <td>{{ $value->file }}</td>
                             <td>{{ $value->ext }}</td>
-                            <!-- <td><img src="{{ asset('uploads/images/' . $value->file) }}" width="85" height="85" /></td> -->
-                            <td class="text-nowrap">
-                              <!-- <a href="{{ route('aboutus.edit',[ $value->id] )}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'aboutus.destroy', $value->id ] ]) !!}
-                              <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
-                              {{ Form::close() }} -->
 
+                            <td class="text-nowrap">
+                              <a href="{{ route('aboutus.edit',[ $value->id] )}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'aboutus.destroy', $value->id ] ]) !!}
+                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                              {{ Form::close() }}
                             </td>
                           </tr>
                         @endforeach
