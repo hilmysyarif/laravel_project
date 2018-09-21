@@ -25,7 +25,7 @@ class Enterprise extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'icon', 'description'
+        'title', 'icon', 'description', 'thumbnail'
     ];
 
     /**

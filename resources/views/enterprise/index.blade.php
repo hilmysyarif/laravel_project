@@ -37,6 +37,7 @@
                           <th style="width: 10px">#</th>
                           <th>Title</th>
                           <th>Icon</th>
+                          <th>Thumbnail</th>
                           <th>Description</th>
                           <th style="width: 40px">Action</th>
                         </tr>
@@ -44,11 +45,12 @@
                           <tr>
                             <td>{{ $value->id }}</td>
                             <td>{{ $value->title }}</td>
-                            <td>{{ $value->icon }}</td>
+                            <td><img src="{{ asset('uploads/images/' . $value->icon) }}" width="85" height="85" /></td>
+                            <td><img src="{{ asset('uploads/images/' . $value->thumbnail ) }}" width="85" height="85" /></td>
                             <td>{!! $value->description !!}</td>
                             <td class="text-nowrap">
                               <a href="{{ route('backend.enterprise.edit', $value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'backend.enterprise.destroy', $value->id ] ]) !!}
+                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'enterprise.destroy', $value->id ] ]) !!}
                                   <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                               {{ Form::close() }}
 

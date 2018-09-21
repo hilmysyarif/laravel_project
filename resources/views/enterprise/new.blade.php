@@ -41,12 +41,24 @@
                           @endif
                         </div>
                         <div class="form-group has-feedback">
-                          <input id="icon" type="text" class="form-control" name="icon" value="{{ old('icon') }}" placeholder="Icon" required autofocus>
+                          <p> Icon</p>
+                          <input id="icon" type="file" class="form-control" name="icon" value="{{ old('icon') }}" placeholder="Icon" required autofocus>
                           @if ($errors->has('title'))
                               <span class="help-block">
                                   <strong>{{ $errors->first('title') }}</strong>
                               </span>
                           @endif
+                        </div>
+
+                        <div class="form-group has-feedback">
+                          <p> Thumbnail</p>
+                          <input id="thumbnail" type="file" class="form-control" name="thumbnail" value="{{ old('thumbnail') }}" placeholder="Thumbnail" required autofocus>
+                          @if ($errors->has('title'))
+                              <span class="help-block">
+                                  <strong>{{ $errors->first('title') }}</strong>
+                              </span>
+                          @endif
+
                         </div>
 
                         <div class="form-group has-feedback">

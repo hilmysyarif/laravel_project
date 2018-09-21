@@ -46,14 +46,30 @@ class EnterpriseController extends Controller
     public function store(Request $request)
     {
       // validate our input description
-  		$this->validate($request, [	'title' => 'required', 'icon' => 'required', 'description' => 'required']);
+  		$this->validate($request, [	'title' => 'required']);
 
       $data = [
   			'title' => $request->input('title'),
-  			'icon' => $request->input('icon'),
   			'description' => $request->input('description'),
+  			'file' => '',
+  			'ext' => '',
   		];
 
+      if ($request->hasfile('icon')) {
+          $file = $request->file('icon');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['icon'] = $filename;
+      }
+
+      if ($request->hasfile('thumbnail')) {
+          $file = $request->file('thumbnail');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['thumbnail'] = $filename;
+      }
 
       Enterprise::create($data);
 
@@ -74,13 +90,30 @@ class EnterpriseController extends Controller
     public function update(Request $request, $id)
     {
       // validate our input description
-  		$this->validate($request, [	'title' => 'required', 'icon' => 'required', 'description' => 'required']);
+      $this->validate($request, [	'title' => 'required']);
 
       $data = [
-  			'title' => $request->input('title'),
-  			'icon' => $request->input('icon'),
-  			'description' => $request->input('description')
-  		];
+        'title' => $request->input('title'),
+        'description' => $request->input('description'),
+        'file' => '',
+        'ext' => '',
+      ];
+
+      if ($request->hasfile('icon')) {
+          $file = $request->file('icon');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['icon'] = $filename;
+      }
+
+      if ($request->hasfile('thumbnail')) {
+          $file = $request->file('thumbnail');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['thumbnail'] = $filename;
+      }
 
       $enterprise = Enterprise::findOrFail($id);
       $enterprise->update($data);
