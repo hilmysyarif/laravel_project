@@ -5,4 +5,10 @@ Intertec.controller('enterpriseController', function enterpriseController($scope
   .success(function(response) {
   	$scope.data = response.data;
   });
+
+  $http.get(constants.API_URL + "clients")
+  .success(function(response) {
+  	$scope.customerLists = response.data;
+    console.log(response.data);
+  });
 });
