@@ -44,7 +44,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ route('aboutus.index' )}}">
             <i class="fa fa-envelope"></i> <span>About Us</span>
           </a>
         </li>
