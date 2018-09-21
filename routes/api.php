@@ -12,19 +12,13 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-/*
-Route::get('/user', function (Request $request) {
-    return $request->user();
-})->middleware('auth:api');
 
-Route::get('hamburgers', ['as' => 'hamburgers_api', function () {
-	return App\Hamburger::all();
-}]
-);
-*/
-Route::resource('about_us','HomeController@about_us');
+Route::resource('about','HomeController@about_us');
 Route::resource('sliders','HomeController@sliders');
+Route::resource('brands','HomeController@brands');
+Route::resource('products','HomeController@products');
+Route::resource('productcategory','HomeController@product_category');
 Route::resource('clients','HomeController@clients');
 Route::resource('news','HomeController@news');
-// Route::resource('hamburgers','HamburgerController',['only'=>['index','store','show','update']]);
-// Route::resource('hamburgers.descriptions','HamburgerDescriptionController',['only'=>['index','store','show','update','destroy']]);
+Route::resource('news-category','HomeController@news_category');
+Route::resource('enterprise','HomeController@enterprise');

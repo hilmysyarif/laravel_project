@@ -27,8 +27,8 @@ Intertec.config(function($routeProvider) {
 		})
 
 		.when('/products', {
-			templateUrl : 'app/products/products.template.htm',
-			controller  : 'productsController'
+			templateUrl : 'app/category/category.template.htm',
+			controller  : 'categoryController'
 		})
 
 		// route for a product brand

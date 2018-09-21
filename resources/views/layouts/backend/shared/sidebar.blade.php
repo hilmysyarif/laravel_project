@@ -77,7 +77,9 @@
           </a>
         </li>
         <li>
-
+          <a href="{{ route('backend.slider.index')}}">
+            <i class="fa fa-image"></i> <span>Sliders</span>
+          </a>
         </li>
       </ul>
     @endif
