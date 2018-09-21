@@ -72,8 +72,8 @@
           </ul>
         </li>
         <li>
-          <a href="#">
-            <i class="fa fa-envelope"></i> <span>Customer Logo</span>
+          <a href="{{ route('customers.index')}}">
+            <i class="fa fa-users"></i> <span>Customers</span>
           </a>
         </li>
       </ul>

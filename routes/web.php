@@ -20,6 +20,16 @@ Auth::routes();
 Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
   Route::get('/', 'HomeController@index');
 
+  // Customers
+  Route::resource('/customers', 'CustomersController', [
+    'names' => [
+      'index' => 'customers.index',
+      'edit' => 'customers.edit',
+      'update' => 'customers.update',
+      'delete' => 'customers.delete'
+    ]
+  ]);
+
   // Product Category
   Route::group(['prefix' => 'products'], function () {
     Route::resource('/', 'ProductCategoryController', [
