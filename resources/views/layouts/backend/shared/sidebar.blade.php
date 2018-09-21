@@ -31,7 +31,7 @@
                 <li><a href="{{ route('brands.index', 'home-router')}}"><i class="fa fa-circle-o"></i> Home Router</a></li>
                 <li><a href="{{ route('brands.index', 'mobile-wifi')}}"><i class="fa fa-circle-o"></i> Mobile Wifi</a></li>
                 <li><a href="{{ route('brands.index', 'power-bank')}}"><i class="fa fa-circle-o"></i> Power Bank</a></li>
-                <li><a href="{{ route('brands.index', 'computer-accessories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
+                <li><a href="{{ route('brands.index', 'computer-accesories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
                 <li><a href="{{ route('brands.index', 'camera')}}"><i class="fa fa-circle-o"></i> Camera</a></li>
                 <li><a href="{{ route('brands.index', 'unified-communication')}}"><i class="fa fa-circle-o"></i> Unified Communication</a></li>
               </ul>
@@ -49,7 +49,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ route('backend.enterprise.index') }}">
             <i class="fa fa-envelope"></i> <span>Enterprise</span>
           </a>
         </li>
@@ -67,14 +67,17 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Category News</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> All News</a></li>
+            <li><a href="{{ route('backend.news.categories.index') }}"><i class="fa fa-circle-o"></i> Category News</a></li>
+            <li><a href="{{ route('backend.news.index') }}"><i class="fa fa-circle-o"></i> All News</a></li>
           </ul>
         </li>
         <li>
-          <a href="#">
-            <i class="fa fa-envelope"></i> <span>Customer Logo</span>
+          <a href="{{ route('customers.index')}}">
+            <i class="fa fa-users"></i> <span>Customers</span>
           </a>
+        </li>
+        <li>
+
         </li>
       </ul>
     @endif

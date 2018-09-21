@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Harran\Slugit\SlugService;
 
-class AboutUs extends Model
+class Enterprise extends Model
 {
   use SlugService;
 

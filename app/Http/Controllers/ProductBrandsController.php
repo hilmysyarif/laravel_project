@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ProductCategory;
 use App\ProductBrand;
+use App\Product;
 
 class ProductBrandsController extends Controller
 {
@@ -90,6 +91,15 @@ class ProductBrandsController extends Controller
   		$brand = ProductBrand::find($brandId);
       $category = ProductCategory::where('slug', $category_id)->first();
       return view('products.brands.edit', compact('category', 'brand'));
+
+  	}
+
+    public function show($category_id, $brandId)
+  	{
+  		$brand = ProductBrand::find($brandId);
+  		$products = Product::where('brands_id', $brandId)->get();
+      $category = ProductCategory::where('slug', $category_id)->first();
+      return view('products.brands.show', compact('category', 'brand', 'products'));
 
   	}
 
