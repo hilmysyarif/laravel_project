@@ -49,7 +49,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="{{ route('backend.enterprise.index') }}">
             <i class="fa fa-envelope"></i> <span>Enterprise</span>
           </a>
         </li>
@@ -67,13 +67,18 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Category News</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> All News</a></li>
+            <li><a href="{{ route('backend.news.categories.index') }}"><i class="fa fa-circle-o"></i> Category News</a></li>
+            <li><a href="{{ route('backend.news.index') }}"><i class="fa fa-circle-o"></i> All News</a></li>
           </ul>
         </li>
         <li>
           <a href="{{ route('customers.index')}}">
             <i class="fa fa-users"></i> <span>Customers</span>
+          </a>
+        </li>
+        <li>
+          <a href="{{ route('backend.sliders.index')}}">
+            <i class="fa fa-image"></i> <span>Sliders</span>
           </a>
         </li>
       </ul>

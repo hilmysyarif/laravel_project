@@ -30,6 +30,55 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
     ]
   ]);
 
+  // Sliders
+  Route::resource('/sliders', 'SlidersController', [
+    'names' => [
+      'index' => 'backend.slider.index',
+      'edit' => 'backend.slider.edit',
+      'create' => 'backend.slider.create',
+      'store' => 'backend.slider.store',
+      'update' => 'backend.slider.update',
+      'delete' => 'backend.slider.destroy'
+    ]
+  ]);
+
+  // Enterprise
+  Route::resource('/enterprise', 'EnterpriseController', [
+    'names' => [
+      'index' => 'backend.enterprise.index',
+      'edit' => 'backend.enterprise.edit',
+      'create' => 'backend.enterprise.create',
+      'store' => 'backend.enterprise.store',
+      'update' => 'backend.enterprise.update',
+      'delete' => 'backend.enterprise.destroy'
+    ]
+  ]);
+
+  // News and Category
+  Route::group(['prefix' => 'news'], function () {
+    Route::resource('/', 'NewsController', [
+      'names' => [
+        'index' => 'backend.news.index',
+        'edit' => 'backend.news.edit',
+        'create' => 'backend.news.create',
+        'store' => 'backend.news.store',
+        'update' => 'backend.news.update',
+        'delete' => 'backend.news.delete'
+      ]
+    ]);
+
+    Route::resource('/categories', 'NewsCategoriesController', [
+      'names' => [
+        'index' => 'backend.news.categories.index',
+        'edit' => 'backend.news.categories.edit',
+        'create' => 'backend.news.categories.create',
+        'store' => 'backend.news.categories.store',
+        'update' => 'backend.news.categories.update',
+        'delete' => 'backend.news.categories.destroy'
+      ]
+    ]);
+  });
+
   // Product Category
   Route::group(['prefix' => 'products'], function () {
     Route::resource('/', 'ProductCategoryController', [
