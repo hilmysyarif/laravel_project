@@ -22,3 +22,4 @@ Route::resource('clients','HomeController@clients');
 Route::resource('news','HomeController@news');
 Route::resource('news-category','HomeController@news_category');
 Route::resource('enterprise','HomeController@enterprise');
+Route::resource('enterprisebox','HomeController@enterprisebox');

@@ -44,7 +44,7 @@
                           <tr>
                             <td>{{ $value->id }}</td>
                             <td>{{ $value->title }}</td>
-                            <td><img src="{{ asset('uploads/images/' . $value->icon) }}" width="85" height="85" /></td>
+                            <td>{{ $value->icon }}</td>
                             <td><img src="{{ asset('uploads/images/' . $value->thumbnail ) }}" width="85" height="85" /></td>
                             <td class="text-nowrap">
                               <a href="{{ route('backend.enterpriseBox.edit', $value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>

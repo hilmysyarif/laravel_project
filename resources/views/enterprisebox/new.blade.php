@@ -42,7 +42,8 @@
                         </div>
 
                         <div class="form-group has-feedback">
-                          <input id="icon" type="file" class="form-control" name="icon" placeholder="Icon" required autofocus>
+                          <input id="icon" type="text" class="form-control" name="icon" value="{{ old('icon') }}" placeholder="Icon" required autofocus>
+
                           @if ($errors->has('icon'))
                               <span class="help-block">
                                   <strong>{{ $errors->first('icon') }}</strong>
@@ -59,7 +60,7 @@
                           @endif
                         </div>
                         <div class="form-group has-feedback">
-                          <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="Url External" required autofocus>
+                          <input id="url" type="text" class="form-control" name="url" value="{{ old('url') }}" placeholder="Url External" autofocus>
                           @if ($errors->has('url'))
                               <span class="help-block">
                                   <strong>{{ $errors->first('url') }}</strong>

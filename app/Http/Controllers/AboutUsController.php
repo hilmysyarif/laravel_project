@@ -59,7 +59,8 @@ class AboutUsController extends Controller
   			// 'parent_id' => $request->input('product_id'),
   			'key' => $request->input('key'),
         'value' => $request->input('value'),
-        'ext' => ''
+        'ext' => '',
+        'file' => ''
   		];
 
       if ($request->hasfile('file')) {

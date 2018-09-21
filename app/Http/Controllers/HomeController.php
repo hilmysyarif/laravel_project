@@ -12,6 +12,7 @@ use App\Customer;
 use App\News;
 use App\NewsCategory;
 use App\Enterprise;
+use App\EnterpriseBox;
 
 class HomeController extends Controller
 {
@@ -141,5 +142,17 @@ class HomeController extends Controller
       $enterprise = Enterprise::all();
 
       return response()->json(compact('enterprise'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function enterprisebox()
+    {
+      $enterprisebox = EnterpriseBox::all();
+
+      return response()->json(compact('enterprisebox'));
     }
 }

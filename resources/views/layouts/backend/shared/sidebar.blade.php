@@ -81,6 +81,11 @@
             <i class="fa fa-image"></i> <span>Sliders</span>
           </a>
         </li>
+        <li>
+          <a href="{{ route('backend.enterpriseBox.index')}}">
+            <i class="fa fa-image"></i> <span>Enterprise Box</span>
+          </a>
+        </li>
       </ul>
     @endif
   </section>

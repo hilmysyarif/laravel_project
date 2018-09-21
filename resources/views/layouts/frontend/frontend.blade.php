@@ -56,12 +56,12 @@
 
   							<ul class="menu-sidebar pull-right">
   								<li>
-  									<a href="#" id="btn-search"><i aria-hidden="true" class="fa fa-search"></i></a>
+  									<a href="/#/" id="btn-search"><i aria-hidden="true" class="fa fa-search"></i></a>
   								</li>
   							</ul>
   							<ul class="menu-links" style="display: none; max-height: 400px; overflow: auto;" ng-controller="homeController">
-  								<li class="active">
-  									<a href="{{ url ('/#/')}}" ng-click="active($event)">Home</a>
+  								<li class="">
+  									<a href="/#/" ng-click="active($event)">Home</a>
   								</li>
   								<li class="">
   									<a href="{{ url ('/#/about-us')}}" ng-click="active($event)">About Us</a>
@@ -138,21 +138,21 @@
                         <div class="col-sm-12">
                             <ul class="menu">
                                 <li class="d-inline-block">
-                                    <a href="index.html">Home</a>
+                                    <a href="/#/">Home</a>
                                 </li>
                                 <li class="d-inline-block">
-                                    <a href="about-us.html">About Us</a>
+                                    <a href="/#/about-us">About Us</a>
                                 </li>
                                 <li class="d-inline-block">
-                                    <a href="Enterprise.html">Enterprise</a>
-                                </li>
-
-                                <li class="d-inline-block">
-                                    <a href="home-products.html">Product</a>
+                                    <a href="/#/enterprise">Enterprise</a>
                                 </li>
 
                                 <li class="d-inline-block">
-                                    <a href="#">Contact Us</a>
+                                    <a href="/#/products">Product</a>
+                                </li>
+
+                                <li class="d-inline-block">
+                                    <a href="/#/contact">Contact Us</a>
                                 </li>
                             </ul>
                         </div>

@@ -45,8 +45,7 @@
 
                           <div class="form-group has-feedback">
                             <p> Icon</p>
-                            <input id="icon" type="file" class="form-control" name="icon" placeholder="File" required autofocus>
-                            <img src="{{ asset('uploads/images/' . $enterpriseBox->icon) }}" width="85" height="85" />
+                            <input id="icon" type="text" class="form-control" name="icon" value="{{ $enterpriseBox->icon }}" placeholder="Icon" required autofocus>
                             @if ($errors->has('icon'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('icon') }}</strong>
@@ -56,7 +55,7 @@
 
                           <div class="form-group has-feedback">
                             <p> Thumbnail</p>
-                            <input id="thumbnail" type="file" class="form-control" name="thumbnail" placeholder="Thumbnail" required autofocus>
+                            <input id="thumbnail" type="file" class="form-control" name="thumbnail" placeholder="Thumbnail" autofocus>
                             <img src="{{ asset('uploads/images/' . $enterpriseBox->thumbnail) }}" width="85" height="85" />
                             @if ($errors->has('thumbnail'))
                                 <span class="help-block">
@@ -66,7 +65,7 @@
                           </div>
 
                           <div class="form-group has-feedback">
-                            <input id="url" class="form-control" name="url"  value="{{ $enterpriseBox->url }}" placeholder="Value" autofocus>
+                            <input id="url" class="form-control" name="url"  value="{{ $enterpriseBox->url }}" placeholder="URL" autofocus>
                             @if ($errors->has('url'))
                                 <span class="help-block">
                                   <strong>{{ $errors->first('url') }}</strong>

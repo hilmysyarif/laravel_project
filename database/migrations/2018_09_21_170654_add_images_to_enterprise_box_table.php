@@ -14,6 +14,8 @@ class AddImagesToEnterpriseBoxTable extends Migration
     public function up()
     {
         Schema::table('enterprise_box', function (Blueprint $table) {
+          $table->string('thumbnail');
+          $table->string('icon');
           $table->dropColumn('file');
           $table->dropColumn('ext');
             //
