@@ -27,20 +27,10 @@ Intertec.config(function($routeProvider) {
 		})
 
 		.when('/products', {
-			templateUrl : 'app/category/category.template.htm',
-			controller  : 'categoryController'
+			templateUrl : 'app/products/products.template.htm',
+			controller  : 'productsController'
 		})
 
-		// route for a product brand
-		.when('/products/:brandID', {
-			templateUrl : 'app/productbrand/productbrand.template.htm',
-			controller  : 'productBrandController'
-		})
-
-		.when('/contact', {
-			templateUrl : 'app/contact/contact.template.htm',
-			controller  : 'contactController'
-		})
 
 		// default route
 		.otherwise({

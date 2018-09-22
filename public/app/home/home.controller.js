@@ -9,7 +9,9 @@ Intertec.controller('homeController', function homeController($scope, $http, $lo
       myEl.addClass('active');
     }
 
-    $('.owl-carousel').owlCarousel();
+    // $('.owl-carousel').owlCarousel({
+    //   navigation: true, pagination: false, rewindNav : false
+    // });
 
     $('#rev_slider_7_1').revolution(
          {
@@ -39,4 +41,12 @@ Intertec.controller('homeController', function homeController($scope, $http, $lo
 			.success(function(response) {
 				$scope.enterprisebox = response.enterprisebox;
 			});
-	});
+	}).directive('wrapOwlcarousel', function () {
+    return {
+        restrict: 'E',
+        link: function (scope, element, attrs) {
+            var options = scope.$eval($(element).attr('data-options'));
+            $(element).owlCarousel(options);
+        }
+    };
+});  ;

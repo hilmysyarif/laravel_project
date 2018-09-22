@@ -18,7 +18,7 @@
 		<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>
 	</div>
 </div>
-<div class="main-content">
+<div class="main-content" ng-controller="homeController">
   <section class="white-bg pd-5px">
     <div class="container-fluid">
       <div class="row no-gutter">
@@ -57,10 +57,18 @@
 					<div class="container">
 							<div class="row">
 									<div class="col-lg-12 col-md-12">
-											<div class="owl-carousel arrow-2" data-autoplay="true" data-items="5" data-lg-items="5" data-md-items="4" data-nav-arrow="true" data-nav-dots="false" data-sm-items="3">
+											<!-- <div class="owl-carousel arrow-2" data-autoplay="true" data-items="5" data-lg-items="5" data-md-items="4" data-nav-arrow="true" data-nav-dots="false" data-sm-items="3">
 												<div class="item" ng-repeat="item in brands"><img alt="#" class="img-fluid center-block" src="/uploads/images/{{ item.logo }}" width="210" height="24"></div>
 
-											</div>
+											</div> -->
+
+											<wrap-owlcarousel class="owl-carousel"
+											    data-options="{autoPlay: 5000, stopOnHover: true,
+											        slideSpeed : 300, paginationSpeed : 400, singleItem : true}">
+											    <div *ngFor = "let logo of brands">
+											        <img class="img-fluid center-block" ng-src="/uploads/images/{{ logo.logo }}" width="210" height="24">
+											    </div>
+											</wrap-owlcarousel>
 									</div>
 							</div>
 					</div>
