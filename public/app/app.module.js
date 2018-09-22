@@ -32,6 +32,30 @@ Intertec.config(function($routeProvider) {
 		})
 
 
+		// route for a product brand
+		.when('/products/:categoryID/brands', {
+			templateUrl : 'app/productbrand/productbrand.template.htm',
+			controller  : 'productBrandController'
+		})
+
+		// route for a lists of product brand
+		.when('/products/:categoryID/brands/:brandID', {
+			templateUrl : 'app/product/product.template.htm',
+			controller  : 'productController'
+		})
+
+		// route for a product detail
+		.when('/products/:categoryID/brands/:brandID/:productID', {
+			templateUrl : 'app/productdetail/productdetail.template.htm',
+			controller  : 'productDetailController'
+		})
+
+		.when('/contact', {
+			templateUrl : 'app/contact/contact.template.htm',
+			controller  : 'contactController'
+		})
+
+
 		// default route
 		.otherwise({
       redirectTo: '/'

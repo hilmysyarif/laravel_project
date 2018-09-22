@@ -77,22 +77,22 @@
   											<div class="grid-col-12">
   												<ul>
   													<li class="grid-col-4">
-  														<a href="{{ url ('/#/products/home-router')}}"><img alt="" class="menu-svg" src="images/router.svg"> <span class="txt-menu">Home Router</span></a>
+  														<a href="{{ url ('/#/products/home-router/brands')}}"><img alt="" class="menu-svg" src="images/router.svg"> <span class="txt-menu">Home Router</span></a>
   													</li>
   													<li class="grid-col-4">
-  														<a href="{{ url ('/#/products/mobile-wifi')}}"><img alt="" class="menu-svg" src="images/mobile-wifi.svg"> <span class="txt-menu">Mobile Wifi</span></a>
+  														<a href="{{ url ('/#/products/mobile-wifi/brands')}}"><img alt="" class="menu-svg" src="images/mobile-wifi.svg"> <span class="txt-menu">Mobile Wifi</span></a>
   													</li>
   													<li class="grid-col-4">
-  														<a href="{{ url ('/#/products/power-bank')}}"><img alt="" class="menu-svg" src="images/power-bank.svg"> <span class="txt-menu">Power Bank</span></a>
+  														<a href="{{ url ('/#/products/power-bank/brands')}}"><img alt="" class="menu-svg" src="images/power-bank.svg"> <span class="txt-menu">Power Bank</span></a>
   													</li>
   													<li class="grid-col-4">
-  														<a href="{{ url ('/#/products/computer-accesories')}}"><img alt="" class="menu-svg" src="images/comp.svg"> <span class="txt-menu">Computer Accessories</span></a>
+  														<a href="{{ url ('/#/products/computer-accesories/brands')}}"><img alt="" class="menu-svg" src="images/comp.svg"> <span class="txt-menu">Computer Accessories</span></a>
   													</li>
   													<li class="grid-col-4">
-  														<a href="{{ url ('/#/products/camera')}}"><img alt="" class="menu-svg" src="images/camera.svg"> <span class="txt-menu">Camera</span></a>
+  														<a href="{{ url ('/#/products/camera/brands')}}"><img alt="" class="menu-svg" src="images/camera.svg"> <span class="txt-menu">Camera</span></a>
   													</li>
   													<li class="grid-col-4">
-  														<a href="{{ url ('/#/products/unified-communication')}}"><img alt="" class="menu-svg" src="images/communcation.svg"> <span class="txt-menu">Unified Communication</span></a>
+  														<a href="{{ url ('/#/products/unified-communication/brands')}}"><img alt="" class="menu-svg" src="images/communcation.svg"> <span class="txt-menu">Unified Communication</span></a>
   													</li>
   												</ul>
   											</div>
