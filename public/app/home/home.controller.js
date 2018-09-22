@@ -41,6 +41,10 @@ Intertec.controller('homeController', function homeController($scope, $http, $lo
 			.success(function(response) {
 				$scope.enterprisebox = response.enterprisebox;
 			});
+    $http.get(constants.API_URL + "news")
+			.success(function(response) {
+				$scope.news = response.news;
+			});
 	}).directive('wrapOwlcarousel', function () {
     return {
         restrict: 'E',
