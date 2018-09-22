@@ -5,8 +5,8 @@
       <div class="col-lg-6 col-sm-12">
         <div class="">
           <h2 class="iq-font-white iq-tw-6">
-              Home Router</h2>
-          <p><a href="/#/" style="color: white;"><b>Home</b></a> > <a href="/#/products" style="color: white;"><b>Products</b></a> > <a href="/#/products/home-router" style="color: white;"><b>Home router</b></a> > All products</p>
+              {{ brand.title }}</h2>
+          <p><a href="/#/" style="color: white;"><b>Home</b></a> > <a href="/#/products" style="color: white;"><b>Products</b></a> > <a ng-href="/#/products/{{ category.slug }}" style="color: white;"><b>{{ category.title }}</b></a> > <a ng-href="/#/products/{{ category.slug }}/brands" style="color: white;"><b>Brands</b></a> > <a ng-href="/#/products/{{ category.slug }}/brands/{{ brand.id}}" style="color: white;"><b>{{ brand.title}}</b></a></p>
         </div>
       </div>
 
@@ -19,46 +19,17 @@
   <div class="container padd-80 product-list-sec">
     <div class="col-md-3 col-md-pull-9 main-side-bar">
 
+
       <div class="iq-sidebar-widget">
         <h5 class="iq-tw-6 small-title iq-font-dark">Categories Product</h5>
         <div class="iq-widget-menu">
         <ul class="iq-pl-0">
-        <li  class="active">
-          <a href="category-home-router.html">
-            <img class="menu-cat" src="images/router.svg" alt="">
-            <span>Home Router <i class="fa fa-angle-right"></i></span>
+        <li  class="active" ng-repeat="item in categories">
+          <a ng-href="/#/products/{{ item.slug }}/brands">
+            <img class="menu-cat" src="/images/{{item.icon}}.svg" alt="">
+            <span>{{ item.title }} <i class="fa fa-angle-right"></i></span>
           </a>
         </li>
-        <li class="">
-           <a href="#">
-              <img class="menu-cat" src="images/mobile-wifi.svg" alt="">
-             <span>Mobile Wifi <i class="fa fa-angle-right"></i></span>
-            </a>
-        </li>
-        <li class="">
-           <a href="#">
-              <img class="menu-cat" src="images/power-bank.svg" alt="">
-             <span>Power Bank <i class="fa fa-angle-right"></i></span>
-          </a>
-        </li>
-        <li class="">
-          <a href="#">
-            <img class="menu-cat" src="images/comp.svg" alt="">
-            <span>Computer Accessories <i class="fa fa-angle-right"></i></span>
-          </a>
-        </li>
-        <li>
-            <a href="#">
-              <img class="menu-cat" src="images/camera.svg" alt="">
-              <span>Camera <i class="fa fa-angle-right"></i></span>
-            </a>
-          </li>
-          <li class="">
-              <a href="#">
-                <img class="menu-cat" src="images/communcation.svg" alt="">
-                <span>Unified Communication <i class="fa fa-angle-right"></i></span>
-              </a>
-            </li>
         </ul>
         </div>
         </div>
@@ -66,7 +37,7 @@
 
 
 
-</div>
+    </div>
 
 <div class="col-md-9 show-product">
 
@@ -75,11 +46,11 @@
 
         <div class="profile-brand" >
             <div class="profile-brand-pic-border">
-             <img class="profile-brand-pic" src="http://product.intertec.co.id/web/images/brand/2013-08-27-160211.png"/>
+             <img class="profile-brand-pic" ng-src="/uploads/images/{{ brand.logo }}" width="85" height="85"/>
              </div>
              <div class="brand-name">
              <p>Brand Name</p>
-             <h2> Huawei</h2>
+             <h2>{{ brand.title}}</h2>
             </div>
 
            </div>
@@ -89,14 +60,15 @@
 
 
 
-    <div class="col-md-4 product-pd">
-        <a href="/#/products/home-router/brands/huawei/ws-322">
+    <div class="col-md-4 product-pd" ng-repeat="product in products">
+        <a ng-href="/#/products/{{ category.slug}}/brands/{{ brand.id }}/{{product.id}}">
           <div class="box-wrapper">
-              <img src="images/home-router/1.jpg" alt="rhcp" />
+            
+              <img ng-src="/uploads/images/{{product.file}}" alt="" />
               <div class="box-content">
                 <div class="bg-product-2"></div>
 
-                  <div class="title">WS 322
+                  <div class="title">{{ product.title }}
 
                     </div>
                   <div class="desc">Transform your wired network into wireless. It can effectively extend exist wireless router's Wi-Fi coverage, to provide full Wi-Fi coverage solution for home and office use. With compact size-clear indicator, you can enjoy multiple connection without worrying the cable. Complies with 802.11n, supporting 2x2 MIMO, with transmission rate up to 300Mbps, to meet multi-device access simultaneously.

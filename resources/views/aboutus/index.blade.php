@@ -39,7 +39,6 @@
                           <th>Key</th>
                           <th>Value</th>
                           <th>Image</th>
-                          <th>Ext</th>
                           <th style="width: 40px">Action</th>
                         </tr>
                         @foreach($aboutus as $key => $value)
@@ -47,9 +46,11 @@
                             <td>{{ $value->id }}</td>
                             <td>{{ $value->key }}</td>
                             <td>{{ $value->value }}</td>
-                            <td><img src="{{ asset('uploads/images/' . $value->file) }}" width="85" height="85" /></td>
-                            <td>{{ $value->ext }}</td>
-
+                            <td>
+                              @if($value->file != '')
+                              <img src="{{ asset('uploads/images/' . $value->file) }}" width="85" height="85" /></td>
+                              @else
+                              @endif
                             <td class="text-nowrap">
                               <a href="{{ route('aboutus.edit',[ $value->id] )}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
                               {!! Form::open([ 'method'  => 'delete', 'route' => [ 'aboutus.destroy', $value->id ] ]) !!}

@@ -15,8 +15,8 @@
         <ol class="breadcrumb">
           <li><a href="{{ url('/#/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
           <li><a href="{{ route('product.index')}}">Product</a></li>
-          <li><a href="{{ route('brands.index', $category->slug)}}">{{ $category->title }}</a></li>
-          <li><a href="{{ route('brands.show', [$category->slug, $brand->id])}}">{{ $brand->title }}</a></li>
+          <li><a href="{{ route('backend.brands.index', $category->slug)}}">{{ $category->title }}</a></li>
+          <li><a href="#">{{ $brand->title }}</a></li>
           <li class="active"><a href="#">Products</a></li>
 
         </ol>
@@ -29,7 +29,7 @@
                     <div class="box-header with-border">
                       <h3 class="box-title">All Products</h3>
                       <p class="pull-right">
-                          <a href="{{ route('products.create', [$category->slug, $brand->id])}}" class="btn btn-success btn-xs ad-click-event">
+                          <a href="{{ route('backend.products.create', [$category->slug, $brand->id])}}" class="btn btn-success btn-xs ad-click-event">
                               New Product
                           </a>
                       </p>
@@ -51,8 +51,8 @@
                             <td><img src="{{ asset('uploads/images/' . $value->thumbnail) }}" width="220" height="180" /></td>
                             <td>{!! $value->description !!}</td>
                             <td class="text-nowrap">
-                              <a href="{{ route('products.edit',[$category->slug, $brand->id, $value->id])}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'products.destroy', $category->slug, $brand->id, $value->id ] ]) !!}
+                              <a href="{{ route('backend.products.edit',[$category->slug, $brand->id, $value->id])}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'backend.products.destroy', $category->slug, $brand->id, $value->id ] ]) !!}
                                   <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                               {{ Form::close() }}
 

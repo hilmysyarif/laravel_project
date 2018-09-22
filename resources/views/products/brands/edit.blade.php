@@ -42,7 +42,7 @@
                             @endif
                           </div>
                           <div class="form-group has-feedback">
-                            <textarea id="description" class="form-control" name="description" placeholder="Description" autofocus>{{ $brand->title }}</textarea>
+                            <textarea id="description" class="form-control" name="description" placeholder="Description" autofocus>{{ $brand->description }}</textarea>
                             @if ($errors->has('description'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('description') }}</strong>
@@ -60,7 +60,7 @@
                           </div>
 
                           <div class="form-group has-feedback">
-                            <input id="logo" type="file" class="form-control" name="logo" placeholder="Brand Logo" required autofocus>
+                            <input id="logo" type="file" class="form-control" name="logo" placeholder="Brand Logo" autofocus>
                             @if ($errors->has('logo'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('logo') }}</strong>

@@ -28,29 +28,24 @@
                 </span>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ route('brands.index', 'home-router')}}"><i class="fa fa-circle-o"></i> Home Router</a></li>
-                <li><a href="{{ route('brands.index', 'mobile-wifi')}}"><i class="fa fa-circle-o"></i> Mobile Wifi</a></li>
-                <li><a href="{{ route('brands.index', 'power-bank')}}"><i class="fa fa-circle-o"></i> Power Bank</a></li>
-                <li><a href="{{ route('brands.index', 'computer-accesories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
-                <li><a href="{{ route('brands.index', 'camera')}}"><i class="fa fa-circle-o"></i> Camera</a></li>
-                <li><a href="{{ route('brands.index', 'unified-communication')}}"><i class="fa fa-circle-o"></i> Unified Communication</a></li>
+                <li><a href="{{ route('backend.brands.index', 'home-router')}}"><i class="fa fa-circle-o"></i> Home Router</a></li>
+                <li><a href="{{ route('backend.brands.index', 'mobile-wifi')}}"><i class="fa fa-circle-o"></i> Mobile Wifi</a></li>
+                <li><a href="{{ route('backend.brands.index', 'power-bank')}}"><i class="fa fa-circle-o"></i> Power Bank</a></li>
+                <li><a href="{{ route('backend.brands.index', 'computer-accesories')}}"><i class="fa fa-circle-o"></i> Computer Accessories</a></li>
+                <li><a href="{{ route('backend.brands.index', 'camera')}}"><i class="fa fa-circle-o"></i> Camera</a></li>
+                <li><a href="{{ route('backend.brands.index', 'unified-communication')}}"><i class="fa fa-circle-o"></i> Unified Communication</a></li>
               </ul>
             </li>
           </ul>
         </li>
         <li>
-          <a href="#">
-            <i class="fa fa-envelope"></i> <span>Home</span>
-          </a>
-        </li>
-        <li>
           <a href="{{ route('aboutus.index' )}}">
-            <i class="fa fa-envelope"></i> <span>About Us</span>
+            <i class="fa fa-info"></i> <span>About Us</span>
           </a>
         </li>
         <li>
           <a href="{{ route('backend.enterprise.index') }}">
-            <i class="fa fa-envelope"></i> <span>Enterprise</span>
+            <i class="fa fa-list"></i> <span>Enterprise</span>
           </a>
         </li>
         <li>

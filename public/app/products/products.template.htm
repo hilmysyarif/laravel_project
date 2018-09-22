@@ -18,58 +18,15 @@
 
   <div class="container mr-top-product">
     <div class="row">
-    <div class="col-md-4">
-        <a href="/#/products/home-router/brands">
+    <div class="col-md-4" ng-repeat="item in category">
+        <a ng-href="/#/products/{{ item.slug }}/brands">
         <div class="box-category">
 
-          <img src="images/router.svg" alt="">
-          <h3>Home Router</h3>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-md-4">
-        <a href="/#/products/mobile-wifi/brands">
-          <div class="box-category">
-          <img src="images/mobile-wifi.svg" alt="">
-          <h3>Mobile Wifi</h3>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4">
-        <a href="/#/products/power-bank/brands">
-          <div class="box-category">
-            <img src="images/power-bank.svg" alt="">
-            <h3>Power Bank</h3>
+          <img ng-src="/images/{{item.icon}}.svg" alt="">
+          <h3>{{ item.title }}</h3>
           </div>
         </a>
       </div>
     </div>
-    <div class="row">
-        <div class="col-md-4">
-          <a href="/#/products/computer-accessories/brands">
-            <div class="box-category">
-              <img src="images/comp.svg" alt="">
-              <h3>Computer Accessories</h3>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="/#/products/camera/brands">
-            <div class="box-category">
-              <img src="images/camera.svg" alt="">
-              <h3>Camera</h3>
-            </div>
-          </a>
-        </div>
-        <div class="col-md-4">
-          <a href="/#/products/unified-communication/brands">
-            <div class="box-category">
-              <img src="images/communcation.svg" alt="">
-              <h3>Unified Communication</h3>
-            </div>
-          </a>
-       </div>
-      </div>
   </div>
 </div>

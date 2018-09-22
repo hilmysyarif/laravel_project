@@ -61,3 +61,52 @@ Intertec.config(function($routeProvider) {
       redirectTo: '/'
     });
 });
+
+//create the controller and inject Angular's $scope
+Intertec.controller('productsController', function productsController($scope, $http, $location, constants) {
+  // retrieve slider listing from API
+  $http.get(constants.API_URL + "product-category")
+  .success(function(response) {
+  	$scope.category = response.category;
+  });
+});
+
+// create the controller and inject Angular's $scope
+Intertec.controller('productBrandController', function productBrandController($scope, $http, $location, constants) {
+	// retrieve slider listing from API
+  $http.get(constants.API_URL + "product-category")
+  .success(function(response) {
+  	$scope.category = response.category;
+  });
+
+  $http.get(constants.API_URL + "category/home-router/brands")
+  .success(function(response) {
+  	$scope.brands = response.brands;
+		console.log(response );
+  });
+});
+
+// create the controller and inject Angular's $scope
+Intertec.controller('contactController', function contactController($scope, $http, $location, constants) {
+  // retrieve slider listing from API
+  $http.get(constants.API_URL + "contact")
+  .success(function(response) {
+  	$scope.data = response.data;
+  });
+});
+
+// create the controller and inject Angular's $scope
+Intertec.controller('productController', function productController($scope, $http, $location, constants) {
+
+  $http.get(constants.API_URL + "product-category")
+  .success(function(response) {
+  	$scope.categories = response.category;
+  })
+
+  $http.get(constants.API_URL + "brands/2/products")
+  .success(function(response) {
+  	$scope.products = response.products;
+  	$scope.category = response.category;
+  	$scope.brand = response.brand;
+  });
+});

@@ -104,24 +104,24 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
     // Product Brands
     Route::resource('/{product_id}/brands', 'ProductBrandsController', [
       'names' => [
-        'index' => 'brands.index',
-        'create' => 'brands.create',
-        'store' => 'brands.store',
-        'edit' => 'brands.edit',
-        'update' => 'brands.update',
-        'delete' => 'brands.delete'
+        'index' => 'backend.brands.index',
+        'create' => 'backend.brands.create',
+        'store' => 'backend.brands.store',
+        'edit' => 'backend.brands.edit',
+        'update' => 'backend.brands.update',
+        'destroy' => 'backend.brands.destroy',
       ]
     ]);
 
     // Product
     Route::resource('/{product_id}/brands/{brand_id}/products', 'ProductsController', [
       'names' => [
-        'index' => 'products.index',
-        'create' => 'products.create',
-        'store' => 'products.store',
-        'edit' => 'products.edit',
-        'update' => 'products.update',
-        'delete' => 'products.delete'
+        'index' => 'backend.products.index',
+        'create' => 'backend.products.create',
+        'store' => 'backend.products.store',
+        'edit' => 'backend.products.edit',
+        'update' => 'backend.products.update',
+        'destroy' => 'backend.products.destroy'
       ]
     ]);
 

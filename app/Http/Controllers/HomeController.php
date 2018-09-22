@@ -53,6 +53,30 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getbrands($category_id)
+    {
+      $brands = ProductBrand::join('product_categories', 'product_categories.id', '=', 'product_brands.parent_id')->where('product_categories.slug', $category_id)->select('product_brands.*')->get();
+      return response()->json(compact('brands'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getProducts($brand_id)
+    {
+      $brand = ProductBrand::find($brand_id);
+      $category = ProductCategory::join('product_brands', 'product_categories.id', '=', 'product_brands.parent_id')->where('product_categories.id', $brand->parent_id)->select('product_categories.*')->first();
+      $products = Product::Leftjoin('product_images', 'products.id', '=', 'product_images.product_id')->Leftjoin('product_infos', 'products.id', '=', 'product_infos.product_id')->join('product_brands', 'products.brands_id', '=', 'product_brands.id')->where('products.brands_id', $brand->id)->select('products.*', 'product_infos.*', 'product_images.*')->get();
+      return response()->json(compact('category', 'brand', 'products'));
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function products()
     {
       $products = Product::join()::all();

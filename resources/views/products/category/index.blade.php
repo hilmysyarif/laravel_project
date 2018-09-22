@@ -43,7 +43,7 @@
                             <td>{{ $value->slug }}</td>
                             <td>{{ $value->icon }}</td>
                             <td class="text-nowrap">
-                              <a href="{{route('brands.index',  $value->slug)}}" class="btn btn-info btn-xs">Brands</a>
+                              <a href="{{route('backend.brands.index',  $value->slug)}}" class="btn btn-info btn-xs">Brands</a>
                             </td>
                           </tr>
                         @endforeach
