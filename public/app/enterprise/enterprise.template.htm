@@ -131,21 +131,20 @@
           </div>
         </div>
       </div>
-      <div class="creative-are">
+
+
+
+      <div class="creative-are" ng-repeat="k in data" ng-show="k.id == 1 ">
         <div class="container-fluid">
           <div class="row row-eq-height">
-            <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" style="background-image: url('images/en4.jpg'); background-position: left center;"></div>
+            <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax"  ng-style="{'background-image':'url(uploads/images/{{k.thumbnail}})'}"></div>
             <div class="col-md-6 iq-pall-60 overview-block-ptb bg">
               <div class="row">
                 <div class="col-sm-12">
                   <h3 class="small-title text-grey iq-tw-6 iq-mb-20">
-                     Converged Network & System Solution
+                    {{ k.title}}
                     </h3>
-                  <p>An integrated services to divert a process for comprehensive management for the data network devices such as routers / switches, access points wifi etc ranging from the provision, installation, and integration into a system that is reliable, effective and efficient. Where it's more efficient to coexist telephone, video and data communication within a single networkand it also offers the convinience and flexibility that is not possible with seperate infrastructures
-                    </p>
-                    <p>Combining this convergence of network and system also allow our customers to be more efficient in terms of both techincal and business aspects where we pool all of the IT resources and the automationf IT processes by using a single integrated IT management system.
-                      </p>
-
+                    <p>{{ k.description}} </p>
                 </div>
                 <div class="col-sm-4"></div>
               </div>
@@ -154,49 +153,44 @@
         </div>
       </div>
 
-      <div class="creative-are">
+
+
+
+      <div class="creative-are" ng-repeat="k in data" ng-show="k.id == 2 ">
           <div class="container-fluid">
             <div class="row row-eq-height">
                 <div class="col-md-6 iq-pall-60 overview-block-ptb bg">
                     <div class="row">
                       <div class="col-sm-12">
                         <h3 class="small-title text-grey iq-tw-6 iq-mb-20">
-                           Converged Network & System Solution
+                          {{ k.title}}
                           </h3>
-                        <p>An integrated services to divert a process for comprehensive management for the data network devices such as routers / switches, access points wifi etc ranging from the provision, installation, and integration into a system that is reliable, effective and efficient. Where it's more efficient to coexist telephone, video and data communication within a single networkand it also offers the convinience and flexibility that is not possible with seperate infrastructures.
-
-                          </p>
-                          <p>Combining this convergence of network and system also allow our customers to be more efficient in terms of both techincal and business aspects where we pool all of the IT resources and the automationf IT processes by using a single integrated IT management system.
-                            </p>
+                        <p>{{ k.description}} </p>
 
                       </div>
                       <div class="col-sm-4"></div>
                     </div>
                   </div>
-              <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" style="background-image: url('images/en-2.jpg'); background-position: left center;"></div>
-
+              <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" ng-style="{'background-image':'url(uploads/images/{{k.thumbnail}})'}"></div>
             </div>
           </div>
         </div>
 
-        <div class="creative-are">
+
+
+
+
+        <div class="creative-are" ng-repeat="k in data" ng-show="k.id == 3 ">
             <div class="container-fluid">
               <div class="row row-eq-height">
-                <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" style="background-image: url('images/en3.jpg'); background-position: left center;"></div>
+                <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" ng-style="{'background-image':'url(uploads/images/{{k.thumbnail}})'}"></div>
                 <div class="col-md-6 iq-pall-60 overview-block-ptb bg">
                   <div class="row">
                     <div class="col-sm-12">
                       <h3 class="small-title text-grey iq-tw-6 iq-mb-20">
-                          Unified Communication and Collaboration
-
+                        {{ k.title}}
                         </h3>
-                      <p>UC&C solutions provided by us, allow our customers to communicate and conference via various methods such as text, audio, video and virtual white boards and makes them available through a single interface.
-
-                        </p>
-                        <p>Communication, especially for brainstorming and presentations with audience interaction, can be greatly smoothed by seamless UCC software that enables many different interaction methods. One benefit is that users can devote their attention to the topic at hand rather than the operation of various pieces of software to enable communication through different mediums.
-
-                          </p>
-
+                    <p>{{ k.description}} </p>
                     </div>
                     <div class="col-sm-4"></div>
                   </div>
@@ -204,48 +198,42 @@
               </div>
             </div>
           </div>
-          <div class="creative-are">
+
+
+
+          <div class="creative-are" ng-repeat="k in data" ng-show="k.id == 4 ">
               <div class="container-fluid">
                 <div class="row row-eq-height">
                     <div class="col-md-6 iq-pall-60 overview-block-ptb bg">
                         <div class="row">
                           <div class="col-sm-12">
                             <h3 class="small-title text-grey iq-tw-6 iq-mb-20">
-                                Mobile Device Management
-
+                              {{ k.title}}
                               </h3>
-                            <p>
-                                Whether it’s a custom design or standard range product, we can help meet your wire and cable needs for the most challenging environments and demanding applications. Our materials science technology and EMI shielding capability help ensure you get the right product with the right balance of properties to meet the necessary fit, form, function, performance and reliability in every application.
-
-
-                              </p>
+                              <p>{{ k.description}} </p>
 
                           </div>
                           <div class="col-sm-4"></div>
                         </div>
                       </div>
-                  <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" style="background-image: url('images/4-enter.jpg'); background-position: left center;"></div>
+                  <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" ng-style="{'background-image':'url(uploads/images/{{k.thumbnail}})'}"></div>
 
                 </div>
               </div>
             </div>
-            <div class="creative-are">
+
+
+            <div class="creative-are" ng-repeat="k in data" ng-show="k.id == 5 ">
                 <div class="container-fluid">
                   <div class="row row-eq-height">
-                    <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" style="background-image: url('images/cabel.jpg'); background-position: left center;"></div>
+                    <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" ng-style="{'background-image':'url(uploads/images/{{k.thumbnail}})'}"></div>
                     <div class="col-md-6 iq-pall-60 overview-block-ptb bg">
                       <div class="row">
                         <div class="col-sm-12">
                           <h3 class="small-title text-grey iq-tw-6 iq-mb-20">
-                              Cabling
-
-                            </h3>
-                          <p>
-                              Whether it’s a custom design or standard range product, we can help meet your wire and cable needs for the most challenging environments and demanding applications. Our materials science technology and EMI shielding capability help ensure you get the right product with the right balance of properties to meet the necessary fit, form, function, performance and reliability in every application.
-
-
-                            </p>
-
+                            {{ k.title}}
+                          </h3>
+                          <p>{{ k.description}} </p>
                         </div>
                         <div class="col-sm-4"></div>
                       </div>
@@ -253,6 +241,30 @@
                   </div>
                 </div>
               </div>
+
+              <div class="creative-are" ng-repeat="k in data" ng-show="k.id == 6 ">
+                  <div class="container-fluid">
+                    <div class="row row-eq-height">
+                        <div class="col-md-6 iq-pall-60 overview-block-ptb bg">
+                            <div class="row">
+                              <div class="col-sm-12">
+                                <h3 class="small-title text-grey iq-tw-6 iq-mb-20">
+                                  {{ k.title}}
+                                  </h3>
+                                  <p>{{ k.description}} </p>
+
+                              </div>
+                              <div class="col-sm-4"></div>
+                            </div>
+                          </div>
+                      <div class="col-md-6 overview-block-ptb visible-md visible-lg iq-bg jarallax" ng-style="{'background-image':'url(uploads/images/{{k.thumbnail}})'}"></div>
+
+                    </div>
+                  </div>
+                </div>
+
+
+
 
   <div class="overview-block-ptb iq-testimonial grey-bg">
       <div class="container">

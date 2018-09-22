@@ -50,8 +50,9 @@
                             <td>{!! $value->description !!}</td>
                             <td class="text-nowrap">
                               <a href="{{ route('backend.enterprise.edit', $value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+
                               {!! Form::open([ 'method'  => 'delete', 'route' => [ 'enterprise.destroy', $value->id ] ]) !!}
-                                  <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
+                                <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                               {{ Form::close() }}
 
                             </td>
