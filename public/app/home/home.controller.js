@@ -49,4 +49,4 @@ Intertec.controller('homeController', function homeController($scope, $http, $lo
             $(element).owlCarousel(options);
         }
     };
-});  ;
+});

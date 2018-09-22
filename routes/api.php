@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::resource('about','HomeController@about_us');
 Route::resource('sliders','HomeController@sliders');
 Route::resource('brands','HomeController@brands');
+Route::resource('brands/{:brand_id}','HomeController@getbrands');
 Route::resource('products','HomeController@products');
 Route::resource('productcategory','HomeController@product_category');
 Route::resource('clients','HomeController@clients');

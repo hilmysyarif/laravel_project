@@ -1,13 +1,64 @@
-// create the controller and inject Angular's $scope
-Intertec.controller('enterpriseController', function enterpriseController($scope, $http, $location, constants) {
-  // retrieve slider listing from API
-  $http.get(constants.API_URL + "enterprise")
-  .success(function(response) {
-  	$scope.data = response.enterprise;
-  });
 
-  $http.get(constants.API_URL + "clients")
-  .success(function(response) {
-  	$scope.items = response.customers;
-  });
-});
+Intertec.controller('enterpriseController',
+    function($scope, $http, $routeParams, $location, $filter, constants) {
+
+      // retrieve slider listing from API
+      $http.get(constants.API_URL + "enterprise")
+      .success(function(response) {
+      	$scope.data = response.enterprise;
+      });
+
+      $http.get(constants.API_URL + "clients")
+      .success(function(response) {
+      	$scope.items = response.customers;
+      });
+
+      $scope.owlOptionsTestimonials = {
+          autoPlay: 4000,
+          stopOnHover: true,
+          slideSpeed: 300,
+          paginationSpeed: 600,
+          items: 3
+      }
+
+    }
+);
+
+Intertec.directive("owlCarousel", function() {
+    return {
+        restrict: 'E',
+        transclude: false,
+        link: function(scope) {
+            scope.initCarousel = function(element) {
+                console.log('initCarousel');
+
+                // provide any default options you want
+                var defaultOptions = {};
+                var customOptions = scope.$eval($(element).attr('data-options'));
+                // combine the two options objects
+                for (var key in customOptions) {
+                    defaultOptions[key] = customOptions[key];
+                }
+                // init carousel
+                var curOwl = $(element).data('owlCarousel');
+                if (!angular.isDefined(curOwl)) {
+                    $(element).owlCarousel(defaultOptions);
+                }
+                scope.cnt++;
+            };
+        }
+    };
+}).directive('owlCarouselItem', [
+    function() {
+        return {
+            restrict: 'A',
+            transclude: false,
+            link: function(scope, element) {
+                // wait for the last item in the ng-repeat then call init
+                if (scope.$last) {
+                    scope.initCarousel(element.parent());
+                }
+            }
+        };
+    }
+]);
