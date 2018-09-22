@@ -67,8 +67,8 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
   ]);
 
   // News and Category
-  Route::group(['prefix' => 'news'], function () {
-    Route::resource('/', 'NewsController', [
+
+  Route::resource('/news', 'NewsController', [
       'names' => [
         'index' => 'backend.news.index',
         'edit' => 'backend.news.edit',
@@ -79,17 +79,16 @@ Route::group(['middleware' => ['web'], 'prefix' => 'backend'], function () {
       ]
     ]);
 
-    Route::resource('/categories', 'NewsCategoriesController', [
-      'names' => [
-        'index' => 'backend.news.categories.index',
-        'edit' => 'backend.news.categories.edit',
-        'create' => 'backend.news.categories.create',
-        'store' => 'backend.news.categories.store',
-        'update' => 'backend.news.categories.update',
-        'delete' => 'backend.news.categories.destroy'
-      ]
-    ]);
-  });
+  Route::resource('/newscategories', 'NewsCategoriesController', [
+    'names' => [
+      'index' => 'backend.newscategories.index',
+      'edit' => 'backend.newscategories.edit',
+      'create' => 'backend.newscategories.create',
+      'store' => 'backend.newscategories.store',
+      'update' => 'backend.newscategories.update',
+      'delete' => 'backend.newscategories.destroy'
+    ]
+  ]);
 
   // Product Category
   Route::group(['prefix' => 'products'], function () {

@@ -15,7 +15,7 @@
         <ol class="breadcrumb">
           <li><a href="{{ url('/#/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
           <li><a href="{{ route('backend.news.index')}}">News</a></li>
-          <li><a href="{{ route('backend.news.categories.index')}}">Categories</a></li>
+          <li><a href="{{ route('backend.newscategories.index')}}">Categories</a></li>
           <li class="active"><a href="#">New</a></li>
         </ol>
       </section>
@@ -31,7 +31,7 @@
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
-                      <form class="form-horizontal col-md-6" role="form" method="POST" action="{{ route('backend.news.categories.store') }}" enctype="multipart/form-data">
+                      <form class="form-horizontal col-md-6" role="form" method="POST" action="{{ route('backend.newscategories.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group has-feedback">
                           <input id="title" type="text" class="form-control" name="title" value="{{ old('title') }}" placeholder="News Title" required autofocus>

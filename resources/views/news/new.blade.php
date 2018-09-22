@@ -41,6 +41,13 @@
                           @endif
                         </div>
                         <div class="form-group has-feedback">
+                          <select id="category_id" name="category_id">
+                            @foreach($category as $value)
+                                <option value="{{ $value->id }}">{{ $value->title }}</option>
+                            @endforeach
+                          </select>
+                        </div>
+                        <div class="form-group has-feedback">
                           <textarea id="description" class="form-control" name="description" placeholder="Description" autofocus></textarea>
                           @if ($errors->has('description'))
                               <span class="help-block">
@@ -48,24 +55,15 @@
                               </span>
                           @endif
                         </div>
-<!--
-                        <div class="form-group has-feedback">
-                          <input id="thumbnail" type="file" class="form-control" name="thumbnail" placeholder="Brand Thumbnail" required autofocus>
-                          @if ($errors->has('thumbnail'))
-                              <span class="help-block">
-                                  <strong>{{ $errors->first('thumbnail') }}</strong>
-                              </span>
-                          @endif
-                        </div> -->
 
-                        <!-- <div class="form-group has-feedback">
-                          <input id="logo" type="file" class="form-control" name="logo" placeholder="Customer Logo" required autofocus>
-                          @if ($errors->has('logo'))
+                        <div class="form-group has-feedback">
+                          <input id="file" type="file" class="form-control" name="file" placeholder="File" required autofocus>
+                          @if ($errors->has('file'))
                               <span class="help-block">
-                                  <strong>{{ $errors->first('logo') }}</strong>
+                                  <strong>{{ $errors->first('file') }}</strong>
                               </span>
                           @endif
-                        </div> -->
+                        </div>
 
                         <div class="row">
                           <div class="col-xs-4">

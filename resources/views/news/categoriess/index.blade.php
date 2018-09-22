@@ -15,7 +15,7 @@
         <ol class="breadcrumb">
           <li><a href="{{ url('/#/') }}"><i class="fa fa-dashboard"></i> Home</a></li>
           <li><a href="{{ route('backend.news.index')}}">News</a></li>
-          <li><a href="{{ route('backend.news.categories.index')}}">Categories</a></li>
+          <li><a href="{{ route('backend.newscategories.index')}}">Categories</a></li>
         </ol>
       </section>
 
@@ -26,7 +26,7 @@
                     <div class="box-header with-border">
                       <h3 class="box-title"></h3>
                       <p class="pull-right">
-                          <a href="{{ route('backend.news.categories.create')}}" class="btn btn-success btn-xs ad-click-event">
+                          <a href="{{ route('backend.newscategories.create')}}" class="btn btn-success btn-xs ad-click-event">
                               Create Category
                           </a>
                       </p>
@@ -44,8 +44,8 @@
                             <td>{{ $value->id }}</td>
                             <td>{{ $value->title }}</td>
                             <td class="text-nowrap">
-                              <a href="{{ route('backend.news.categories.edit', $value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
-                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'backend.news.categories.destroy', $value->id ] ]) !!}
+                              <a href="{{ route('backend.newscategories.edit', $value->id)}}" class="btn btn-info btn-xs"><i class="fa fa-edit"></i></a>
+                              {!! Form::open([ 'method'  => 'delete', 'route' => [ 'newscategories.destroy', $value->id ] ]) !!}
                                   <button class="btn btn-danger btn-xs"><i class="fa fa-trash"></i></button>
                               {{ Form::close() }}
 

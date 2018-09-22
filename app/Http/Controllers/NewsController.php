@@ -36,7 +36,8 @@ class NewsController extends Controller
      */
     public function create()
     {
-      return view('news.new');
+      $category = NewsCategory::all();
+      return view('news.new',compact('category'));
     }
 
     /**
@@ -47,13 +48,21 @@ class NewsController extends Controller
     public function store(Request $request)
     {
       // validate our input description
-  		$this->validate($request, [	'name' => 'required']);
+  		$this->validate($request, [	'title' => 'required']);
 
       $data = [
   			'title' => $request->input('title'),
-  			'description' => $request->input('description')
+  			'description' => $request->input('description'),
+  			'category_id' => $request->input('category_id')
   		];
 
+      if ($request->hasfile('file')) {
+          $file = $request->file('file');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['file'] = $filename;
+      }
 
       News::create($data);
 
@@ -66,8 +75,9 @@ class NewsController extends Controller
     public function edit($id)
   	{
   		$news = News::find($id);
+      $category = NewsCategory::all();
 
-      return view('news.edit', compact('news'));
+      return view('news.edit', compact('news','category'));
 
   	}
 
@@ -77,17 +87,18 @@ class NewsController extends Controller
   		$this->validate($request, [	'title' => 'required']);
 
       $data = [
-  			'title' => $request->input('title'),
-  			'description' => $request->input('description')
-  		];
+        'title' => $request->input('title'),
+        'description' => $request->input('description'),
+        'category_id' => $request->input('category_id')
+      ];
 
-      // if ($request->hasfile('logo')) {
-      //     $file = $request->file('logo');
-      //     $extension = $file->getClientOriginalExtension(); // getting image extension
-      //     $filename = time() . '.' . $extension;
-      //     $file->move('uploads/images/', $filename);
-      //     $data['logo'] = $filename;
-      // }
+      if ($request->hasfile('file')) {
+          $file = $request->file('file');
+          $extension = $file->getClientOriginalExtension(); // getting image extension
+          $filename = time() . '.' . $extension;
+          $file->move('uploads/images/', $filename);
+          $data['file'] = $filename;
+      }
 
       $news = News::findOrFail($id);
       $news->update($data);

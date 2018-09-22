@@ -67,7 +67,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('backend.news.categories.index') }}"><i class="fa fa-circle-o"></i> Category News</a></li>
+            <li><a href="{{ route('backend.newscategories.index') }}"><i class="fa fa-circle-o"></i> Category News</a></li>
             <li><a href="{{ route('backend.news.index') }}"><i class="fa fa-circle-o"></i> All News</a></li>
           </ul>
         </li>

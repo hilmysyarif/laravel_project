@@ -26,7 +26,7 @@ class NewsCategoriesController extends Controller
     public function index()
     {
       $categories = NewsCategory::all();
-      return view('news.categories.index', compact('categories'));
+      return view('newscategories.index', compact('categories'));
     }
 
     /**
@@ -36,7 +36,7 @@ class NewsCategoriesController extends Controller
      */
     public function create()
     {
-      return view('news.categories.new');
+      return view('newscategories.new');
     }
 
     /**
@@ -58,7 +58,7 @@ class NewsCategoriesController extends Controller
 
       // redirect
       \Session::flash('message', 'Successfully created news category!');
-      return redirect()->route('backend.news.categories.index');
+      return redirect()->route('backend.newscategories.index');
 
     }
 
@@ -66,7 +66,7 @@ class NewsCategoriesController extends Controller
   	{
   		$category = NewsCategory::find($id);
 
-      return view('news.categories.edit', compact('category'));
+      return view('newscategories.edit', compact('category'));
 
   	}
 
@@ -84,7 +84,7 @@ class NewsCategoriesController extends Controller
 
       // redirect
       \Session::flash('message', 'Successfully update category!');
-      return redirect()->route('backend.news.categories.index');
+      return redirect()->route('backend.newscategories.index');
     }
 
     public function destroy($id)
@@ -93,7 +93,7 @@ class NewsCategoriesController extends Controller
 
       \Session::flash('message', 'Successfully delete category!');
 
-      return redirect()->route('backend.news.categories.index');
+      return redirect()->route('backend.newscategories.index');
 
   	}
 
